@@ -1,0 +1,1 @@
+POC: Storage de binários utilizando o mongo
