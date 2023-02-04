@@ -92,7 +92,7 @@ const download = async (req, res) => {
     });
 
     res.setHeader('Content-disposition', 'attachment; filename=' + fileObject.filename);
-    res.setHeader('Content-type', fileObject.contentType);
+    res.setHeader('Content-type', fileObject.contentType || (fileObject.metadata || {}).mime_type || 'application/x-binary');
   
     readStream.pipe(res);
 }
