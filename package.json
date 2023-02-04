@@ -9,15 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TJAP/tucujuris-a1-signer.git"
+    "url": "git+https://github.com/algtec-dev/mongo-storage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TJAP/tucujuris-a1-signer/issues"
-  },
-  "homepage": "https://github.com/TJAP/tucujuris-a1-signer#readme",
+  "homepage": "https://github.com/algtec-dev/mongo-storage",
   "dependencies": {
     "express": "^4.18.1",
     "mongoose": "^6.9.0",
