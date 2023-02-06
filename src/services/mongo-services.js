@@ -97,8 +97,35 @@ const download = async (req, res) => {
     readStream.pipe(res);
 }
 
+const remove = async (_id) => {
+    const fileModel = await init();
+
+    if (!_id) {
+        throw new Error("file not found.");
+    }
+
+    const fileObject = await get(_id);
+    if (!fileObject) {
+        throw new Error("file not found.");
+    }
+
+    const removePromise = new Promise((resolve, reject) => {
+        fileModel.unlink({
+            _id: mongoose.Types.ObjectId(_id)
+        }, function(err) {
+            if (err) {
+                return reject(err);
+            }
+            return resolve(true);
+        });        
+    });
+
+    await removePromise;
+}
+
 module.exports = {
     upload,
     get,
-    download
+    download,
+    remove
 };
